@@ -1,6 +1,6 @@
 %define base_name drakx-installer-images
 %define name %{base_name}-tmb
-%define version 1.22
+%define version 1.23
 %define release %mkrel 1
 %define theme Free
 
