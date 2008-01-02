@@ -19,6 +19,7 @@ Patch0:  %{name}.patch
 License: GPL
 Group:   Development/Other
 Url:     http://wiki.mandriva.com/Tools/DrakX
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 %ifarch %ix86
 BuildRequires: kernel-tmb-desktop586-latest >= 2.6.23-0.rc8.1mdv
 %else
