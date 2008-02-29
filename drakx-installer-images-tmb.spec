@@ -1,7 +1,7 @@
 %define base_name drakx-installer-images
 %define name %{base_name}-tmb
-%define version 1.23
-%define release %mkrel 3
+%define version 1.28
+%define release %mkrel 1
 %define theme	Free
 
 %define mandriva_version %(rpm -q --queryformat '%{VERSION}-%{RELEASE}' mandriva-release)
@@ -21,16 +21,17 @@ Group:   Development/Other
 Url:     http://wiki.mandriva.com/Tools/DrakX
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 %ifarch %ix86
-BuildRequires: kernel-tmb-desktop586-latest >= 2.6.23-0.rc8.1mdv
+BuildRequires: kernel-tmb-desktop586-latest >= 2.6.24.3-1mdv
 %else
-BuildRequires: kernel-tmb-desktop-latest >= 2.6.23-0.rc8.1mdv
+BuildRequires: kernel-tmb-desktop-latest >= 2.6.24.3-1mdvv
 %endif
 %ifarch %ix86 x86_64
 BuildRequires: memtest86+
 BuildRequires: grub
 BuildRequires: syslinux >= 3.51-4mdv2008.0
 %endif
-BuildRequires: drakx-installer-binaries >= 1.17
+BuildRequires: drakx-installer-binaries >= 1.23
+BuildRequires: ldetect-lst >= 0.1.199
 BuildRequires: mandriva-theme-%{theme}
 BuildRequires: pcmciautils
 BuildRequires: perl-XML-Parser
@@ -39,6 +40,8 @@ BuildRequires: cdrkit-genisoimage
 BuildRequires: mkdosfs-with-dir
 BuildRequires: mknod-m600
 BuildRequires: mtools
+Buildrequires: busybox
+Buildrequires: ka-deploy-source-node
 
 %description
 images needed to build Mandriva installer (DrakX) using kernel-tmb series
