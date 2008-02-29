@@ -23,7 +23,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 %ifarch %ix86
 BuildRequires: kernel-tmb-desktop586-latest >= 2.6.24.3-1mdv
 %else
-BuildRequires: kernel-tmb-desktop-latest >= 2.6.24.3-1mdvv
+BuildRequires: kernel-tmb-desktop-latest >= 2.6.24.3-1mdv
 %endif
 %ifarch %ix86 x86_64
 BuildRequires: memtest86+
