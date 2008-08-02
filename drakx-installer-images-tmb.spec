@@ -1,7 +1,7 @@
 %define base_name drakx-installer-images
 %define name %{base_name}-tmb
-%define version 1.28
-%define release %mkrel 4
+%define version 1.30
+%define release %mkrel 1
 %define theme	Free
 
 %define mandriva_version %(rpm -q --queryformat '%{VERSION}-%{RELEASE}' mandriva-release)
@@ -30,7 +30,7 @@ BuildRequires: memtest86+
 BuildRequires: grub
 BuildRequires: syslinux >= 3.51-4mdv2008.0
 %endif
-BuildRequires: drakx-installer-binaries >= 1.26
+BuildRequires: drakx-installer-binaries >= 1.30-1mdv2009.0
 BuildRequires: ldetect-lst >= 0.1.199
 BuildRequires: mandriva-theme-%{theme}
 BuildRequires: pcmciautils
