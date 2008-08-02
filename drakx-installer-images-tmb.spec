@@ -21,9 +21,9 @@ Group:   Development/Other
 Url:     http://wiki.mandriva.com/Tools/DrakX
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 %ifarch %ix86
-BuildRequires: kernel-tmb-desktop586-latest >= 2.6.24.4-1mdv
+BuildRequires: kernel-tmb-desktop586-latest >= 2.6.26.1-1mdv2009.0
 %else
-BuildRequires: kernel-tmb-desktop-latest >= 2.6.24.4-1mdv
+BuildRequires: kernel-tmb-desktop-latest >= 2.6.26.1-1mdv2009.0
 %endif
 %ifarch %ix86 x86_64
 BuildRequires: memtest86+
