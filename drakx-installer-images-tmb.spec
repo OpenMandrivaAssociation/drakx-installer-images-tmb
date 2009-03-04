@@ -1,6 +1,6 @@
 %define base_name drakx-installer-images
 %define name %{base_name}-tmb
-%define version 1.34
+%define version 1.35
 %define release %mkrel 1
 %define theme	Free
 
@@ -21,9 +21,9 @@ Group:   Development/Other
 Url:     http://wiki.mandriva.com/Tools/DrakX
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 %ifarch %ix86
-BuildRequires: kernel-tmb-desktop586-latest >= 2.6.29-0.rc5.%mkrel 2
+BuildRequires: kernel-tmb-desktop586-latest >= 2.6.29-0.rc7.%mkrel 1
 %else
-BuildRequires: kernel-tmb-desktop-latest >= 2.6.29-0.rc5.%mkrel 2
+BuildRequires: kernel-tmb-desktop-latest >= 2.6.29-0.rc7.%mkrel 1
 %endif
 %ifarch %ix86 x86_64
 BuildRequires: memtest86+
