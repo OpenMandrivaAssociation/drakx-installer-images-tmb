@@ -1,8 +1,17 @@
 %define base_name drakx-installer-images
 %define name %{base_name}-tmb
 %define version 1.35
-%define release %mkrel 1
+%define release %mkrel 2
 %define theme	Free
+
+# version of kernel-tmb-desktop(586) we build against
+%define kernver 2.6.29-0.rc7.1mdv
+
+%ifarch %ix86
+%define install_kernel kernel-tmb-desktop586-%kernver
+%else
+%define install_kernel kernel-tmb-desktop-%kernver
+%endif
 
 %define mandriva_version %(rpm -q --queryformat '%{VERSION}-%{RELEASE}' mandriva-release)
 
@@ -11,7 +20,7 @@
 %define debug_package           %{nil}
 
 Summary: DrakX installer images using kernel-tmb series
-Name: %{name}
+Name:	 %{name}
 Version: %{version}
 Release: %{release}
 Source0: %{base_name}-%{version}.tar.bz2
@@ -20,16 +29,13 @@ License: GPL
 Group:   Development/Other
 Url:     http://wiki.mandriva.com/Tools/DrakX
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-%ifarch %ix86
-BuildRequires: kernel-tmb-desktop586-latest >= 2.6.29-0.rc7.%mkrel 1
-%else
-BuildRequires: kernel-tmb-desktop-latest >= 2.6.29-0.rc7.%mkrel 1
-%endif
+
 %ifarch %ix86 x86_64
 BuildRequires: memtest86+
 BuildRequires: grub
 BuildRequires: syslinux >= 3.72-%mkrel 1
 %endif
+BuildRequires: %install_kernel
 BuildRequires: drakx-installer-binaries >= 1.34-%mkrel 1
 BuildRequires: ldetect-lst >= 0.1.199
 BuildRequires: mandriva-theme-%{theme}
@@ -51,7 +57,7 @@ images needed to build Mandriva installer (DrakX) using kernel-tmb series
 %patch0 -p1
 
 %build
-THEME=Mandriva-%{theme} make -C images
+THEME=Mandriva-%{theme} make -C images KERNELS="%{install_kernel}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
