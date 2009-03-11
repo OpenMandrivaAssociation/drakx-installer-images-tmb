@@ -1,11 +1,11 @@
 %define base_name drakx-installer-images
 %define name %{base_name}-tmb
-%define version 1.35
-%define release %mkrel 2
+%define version 1.36
+%define release %mkrel 1
 %define theme	Free
 
 # version of kernel-tmb-desktop(586) we build against
-%define kernver 2.6.29-0.rc7.1mdv
+%define kernver 2.6.29-0.rc7.3.3mdv
 
 %ifarch %ix86
 %define install_kernel kernel-tmb-desktop586-%kernver
@@ -36,7 +36,7 @@ BuildRequires: grub
 BuildRequires: syslinux >= 3.72-%mkrel 1
 %endif
 BuildRequires: %install_kernel
-BuildRequires: drakx-installer-binaries >= 1.34-%mkrel 1
+BuildRequires: drakx-installer-binaries >= 1.36-%mkrel 1
 BuildRequires: ldetect-lst >= 0.1.199
 BuildRequires: mandriva-theme-%{theme}
 BuildRequires: pcmciautils
