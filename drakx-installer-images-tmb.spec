@@ -1,11 +1,11 @@
 %define base_name drakx-installer-images
 %define name %{base_name}-tmb
-%define version 1.36
-%define release %mkrel 4
+%define version 1.41
+%define release %mkrel 1
 %define theme	Free
 
 # version of kernel-tmb-desktop(586) we build against
-%define kernver 2.6.29-2mdv
+%define kernver 2.6.29.1-3mdv
 
 %ifarch %ix86
 %define install_kernel kernel-tmb-desktop586-%kernver
