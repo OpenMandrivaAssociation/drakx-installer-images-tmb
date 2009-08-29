@@ -1,7 +1,7 @@
 %define base_name drakx-installer-images
 %define name %{base_name}-tmb
 %define version 1.41
-%define release %mkrel 11
+%define release %mkrel 12
 %define theme	Free
 
 # version of kernel-tmb-desktop(586) we build against
@@ -24,7 +24,8 @@ Name:	 %{name}
 Version: %{version}
 Release: %{release}
 Source0: %{base_name}-%{version}.tar.bz2
-Patch0:  %{name}.patch
+Patch0:  %{base_name}-dmraid45.patch
+Patch1:  %{base_name}-tmb-binaries.patch
 License: GPL
 Group:   Development/Other
 Url:     http://wiki.mandriva.com/Tools/DrakX
@@ -54,7 +55,9 @@ images needed to build Mandriva installer (DrakX) using kernel-tmb series
 
 %prep
 %setup -q -n %{base_name}-%{version} 
-%patch0 -p1
+%patch0 -p1 -b .dmraid45
+%patch1 -p1 -b .binaries
+
 
 %build
 THEME=Mandriva-%{theme} make -C images KERNELS="%{install_kernel}"
