@@ -5,7 +5,7 @@
 %define theme	Free
 
 # version of kernel-tmb-desktop(586) we build against
-%define kernver 2.6.31-0.rc8.3mdv
+%define kernver 2.6.31-0.rc8.4mdv
 
 %ifarch %ix86
 %define install_kernel kernel-tmb-desktop586-%kernver
