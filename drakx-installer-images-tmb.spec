@@ -50,9 +50,6 @@ BuildRequires: mtools
 Buildrequires: busybox
 Buildrequires: ka-deploy-source-node
 
-Buildrequires: dkms-squashfs-lzma
-Buildrequires: dkms-lzma
-
 %description
 images needed to build Mandriva installer (DrakX) using kernel-tmb series
 
