@@ -26,6 +26,7 @@ Release: %{release}
 Source0: %{base_name}-%{version}.tar.bz2
 Patch0:  %{base_name}-dmraid45.patch
 Patch1:  %{base_name}-tmb-binaries.patch
+Patch2:  %{base_name}-nosplash.patch
 License: GPL
 Group:   Development/Other
 Url:     http://wiki.mandriva.com/Tools/DrakX
@@ -57,6 +58,7 @@ images needed to build Mandriva installer (DrakX) using kernel-tmb series
 %setup -q -n %{base_name}-%{version} 
 %patch0 -p1 -b .dmraid45
 %patch1 -p1 -b .binaries
+%patch2 -p1 -b .nosplash
 
 
 %build
