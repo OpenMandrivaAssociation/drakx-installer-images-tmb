@@ -40,7 +40,6 @@ BuildRequires: %install_kernel kernel-firmware
 BuildRequires: drakx-installer-binaries-tmb >= 1.42-2
 BuildRequires: ldetect-lst >= 0.1.199
 BuildRequires: mandriva-theme-%{theme}
-BuildRequires: plymouth-theme-mdv
 BuildRequires: pcmciautils
 BuildRequires: perl-XML-Parser
 
