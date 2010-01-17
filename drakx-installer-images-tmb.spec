@@ -1,7 +1,7 @@
 %define base_name drakx-installer-images
 %define name %{base_name}-tmb
-%define version 1.46
-%define release %mkrel 3
+%define version 1.47
+%define release %mkrel 1
 %define theme	Free
 
 # version of kernel-tmb-desktop(586) we build against
@@ -47,7 +47,7 @@ BuildRequires: cdrkit-genisoimage
 BuildRequires: mkdosfs-with-dir
 BuildRequires: mknod-m600
 BuildRequires: mtools
-Buildrequires: busybox
+Buildrequires: busybox-static
 Buildrequires: ka-deploy-source-node
 
 %description
