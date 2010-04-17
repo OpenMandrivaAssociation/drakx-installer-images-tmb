@@ -1,11 +1,11 @@
 %define base_name drakx-installer-images
 %define name %{base_name}-tmb
-%define version 1.47
-%define release %mkrel 7
+%define version 1.48
+%define release %mkrel 1
 %define theme	Free
 
 # version of kernel-tmb-desktop(586) we build against
-%define kernver 2.6.33-1mdv
+%define kernver 2.6.33.2-3mdv
 
 %ifarch %ix86
 %define install_kernel kernel-tmb-desktop586-%kernver
@@ -26,7 +26,6 @@ Release: %{release}
 Source0: %{base_name}-%{version}.tar.bz2
 Patch0:  %{base_name}-dmraid45.patch
 Patch1:  %{base_name}-tmb-binaries.patch
-Patch2:  images-make_boot_img.patch
 License: GPL
 Group:   Development/Other
 Url:     http://wiki.mandriva.com/Tools/DrakX
@@ -38,7 +37,7 @@ BuildRequires: grub
 BuildRequires: syslinux >= 3.72
 %endif
 BuildRequires: %install_kernel kernel-firmware
-BuildRequires: drakx-installer-binaries-tmb >= 1.42-3
+BuildRequires: drakx-installer-binaries-tmb >= 1.45
 BuildRequires: ldetect-lst >= 0.1.199
 BuildRequires: mandriva-theme-%{theme}
 BuildRequires: pcmciautils
@@ -55,10 +54,9 @@ Buildrequires: ka-deploy-source-node
 images needed to build Mandriva installer (DrakX) using kernel-tmb series
 
 %prep
-%setup -q -n %{base_name}-%{version} 
+%setup -q -n %{base_name}-%{version}
 %patch0 -p1 -b .dmraid45
 %patch1 -p1 -b .binaries
-%patch2 -p2
 
 
 %build
@@ -77,7 +75,3 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root)
 %{_libdir}/%name
-
-
-
-
