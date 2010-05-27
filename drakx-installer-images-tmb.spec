@@ -37,7 +37,7 @@ BuildRequires: grub
 BuildRequires: syslinux >= 3.72
 %endif
 BuildRequires: %install_kernel kernel-firmware
-BuildRequires: drakx-installer-binaries-tmb >= 1.46
+BuildRequires: drakx-installer-binaries-tmb >= 1.46-2
 BuildRequires: ldetect-lst >= 0.1.199
 BuildRequires: mandriva-theme-%{theme}
 BuildRequires: pcmciautils
