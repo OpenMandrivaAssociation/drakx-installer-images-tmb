@@ -1,0 +1,12 @@
+diff -Nurp drakx-installer-images-1.48.orig2//images/make_boot_img drakx-installer-images-1.48//images/make_boot_img
+--- drakx-installer-images-1.48.orig2//images/make_boot_img	2010-02-28 05:54:31.000000000 +0200
++++ drakx-installer-images-1.48//images/make_boot_img	2010-04-17 11:36:19.732474466 +0300
+@@ -141,7 +141,7 @@ EOF
+ 
+ sub initrd {
+     my ($type, $I, $img) = @_;
+-    my $stage1_root = $ENV{DEBUGSTAGE1} ? "../mdk-stage1" : "/usr/$lib/drakx-installer-binaries";
++    my $stage1_root = $ENV{DEBUGSTAGE1} ? "../mdk-stage1" : "/usr/$lib/drakx-installer-binaries-tmb";
+     my ($ext) = $img =~ /rdz-(.*)/ or die "bad initrd name ($img)";
+ 
+     _ "rm -rf $tmp_initrd";
