@@ -29,7 +29,7 @@ Patch1:  %{base_name}-tmb-binaries.patch
 Patch2:	 %{base_name}-use-mtools-for-images.patch
 License: GPL
 Group:   Development/Other
-Url:     http://wiki.mandriva.com/Tools/DrakX
+Url:     https://wiki.mandriva.com/Tools/DrakX
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %ifarch %ix86 x86_64
