@@ -33,6 +33,7 @@ Url:     https://wiki.mandriva.com/Tools/DrakX
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %ifarch %ix86 x86_64
+BuildRequires:	make
 BuildRequires: memtest86+
 BuildRequires: grub
 BuildRequires: syslinux >= 3.72
