@@ -1,7 +1,7 @@
 %define base_name drakx-installer-images
 %define name %{base_name}-tmb
 %define version 1.50
-%define release %mkrel 3
+%define release 4
 %define theme	Free
 
 # version of kernel-tmb-desktop(586) we build against
